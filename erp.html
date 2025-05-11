@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | PRMCEAM</title>
+    <link href="erp.css" rel="stylesheet" />
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="erp.js" defer></script>
+  </head>
+  <body>
+    <div class="login-box">
+      <h2>Welcome to PRMCEAM Dashboard</h2>
+      <input type="text" id="username" placeholder="Enter Username" />
+      <input type="password" id="password" placeholder="Enter Password" />
+      <button onclick="login()">Login</button>
+    </div>
+
+    <div class="container" id="dashboard">
+      <h1>PRMCEAM Attendance Dashboard</h1>
+      <div class="top-controls">
+        <input type="text" id="search" class="search-input" placeholder="Search by name or roll number" oninput="renderTable()" />
+        <select id="division-filter" class="filter-select" onchange="renderTable()">
+          <option value="">All Divisions</option>
+          <option value="Division 1">Division 1</option>
+          <option value="Division 2">Division 2</option>
+        </select>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Roll No</th>
+            <th>Division</th>
+            <th>Attendance %</th>
+            <th>Visual</th>
+            <th>Mark Today</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+  </body>
+</html>
